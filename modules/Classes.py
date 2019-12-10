@@ -1,11 +1,14 @@
 from prettycli import green
 
+
 class DataGroup:
     def __init__(self, title, data_list=[]):
         self.title = title
         self.data_list = list(data_list)
 
     def __str__(self):
+        if not self.data_list:
+            return ""
         left_of_title = (38 - len(self.title)) // 2
         right_of_title = 38 - len(self.title) - left_of_title
         string = "┌" + "─" * left_of_title + self.title + "─" * right_of_title + "┐\n"
