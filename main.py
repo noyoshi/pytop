@@ -1,7 +1,6 @@
 import time
 import os
 
-
 from prettycli import red, green, blue, cyan
 
 from modules.disk import disk_usage
@@ -21,10 +20,5 @@ def draw(callbacks, delay=2):
         time.sleep(delay)
 
 
-
-
-# disk_usage()
-# docker_usage()
-# tmux()
-
-draw([disk_usage, memory_usage, docker_usage, tmux])
+if __name__ == "__main__":
+    draw([disk_usage, memory_usage, docker_usage, tmux])
