@@ -8,6 +8,7 @@ def cpu():
     user = cpu_times.user
     system = cpu_times.system
     total = user + system
+    # Not exactly sure what these numbers mean
 
     return DataGroup("CPU", [
         OutputData("User", user),

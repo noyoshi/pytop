@@ -1,4 +1,4 @@
-from prettycli import green
+from prettycli import green, bold
 
 
 class DataGroup:
@@ -11,7 +11,8 @@ class DataGroup:
             return ""
         left_of_title = (38 - len(self.title)) // 2
         right_of_title = 38 - len(self.title) - left_of_title
-        string = "┌" + "─" * left_of_title + self.title + "─" * right_of_title + "┐\n"
+        string = "┌" + "─" * left_of_title + \
+            bold(self.title).to_str() + "─" * right_of_title + "┐\n"
         for row in self.data_list:
             string = string + str(row) + "\n"
         string += "└" + "─" * 38 + "┘" + "\n"
